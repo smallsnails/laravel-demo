@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'https://mirror.ccs.tencentyun.com/php:7.3-fpm-alpine'
+      image 'docker.io/library/php:7.3-fpm-alpine'
     }
 
   }
