@@ -18,6 +18,9 @@ pipeline {
     }
 
     stage('Test') {
+      environment {
+        CI = 'true'
+      }
       steps {
         sh 'composer install && php artisan serve --port 3000'
       }
