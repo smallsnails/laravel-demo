@@ -19,7 +19,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'composer install && php artisan serve'
+        sh 'composer install && php artisan serve --port 3000'
       }
     }
 
