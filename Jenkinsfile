@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'php:7.3-fpm-alpine'
+      image 'https://mirror.ccs.tencentyun.com/php:7.3-fpm-alpine'
     }
 
   }
@@ -11,6 +11,7 @@ pipeline {
         sh '''curl -f -sS https://getcomposer.org/installer | php \\
     && mv composer.phar /usr/local/bin/composer \\
     && composer self-update --clean-backups \\
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \\
     && composer install'''
       }
     }
