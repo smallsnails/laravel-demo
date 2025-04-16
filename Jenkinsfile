@@ -9,10 +9,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''curl -f -sS https://getcomposer.org/installer | php \\
-    && mv composer.phar /usr/local/bin/composer \\
-    && composer self-update --clean-backups \\
-    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ 
+        sh '''apk add curl \\
+&& curl -f -sS https://getcomposer.org/installer | php \\
+&& mv composer.phar /usr/local/bin/composer \\
+&& composer self-update --clean-backups \\
+&& composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ 
  '''
       }
     }
