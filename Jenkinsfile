@@ -26,7 +26,8 @@ pipeline {
         branch "test"
       }
       steps {
-        sh 'composer install && php artisan serve --port 3000'
+        sh "composer update"
+        sh "php artisan serve --port 3000"
       }
     }
 
