@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'php:7.3-fpm-alpine'
-      args '-p 3000:3000'
+      args '--privileged=true -p 3000:3000'
     }
 
   }
