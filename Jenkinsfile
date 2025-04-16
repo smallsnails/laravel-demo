@@ -9,9 +9,8 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh '''php hello.php
-
-echo "finish"'''
+        sh '''php hello.php \\
+&& echo "finish"'''
       }
     }
 
