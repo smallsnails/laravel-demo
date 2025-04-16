@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''apk add curl \\
+        sh '''sed -i \'s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g\' /etc/apk/repositories
+&& apk add curl \\
 && curl -f -sS https://getcomposer.org/installer | php \\
 && mv composer.phar /usr/local/bin/composer \\
 && composer self-update --clean-backups \\
